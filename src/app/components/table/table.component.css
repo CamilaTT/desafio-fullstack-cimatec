@@ -1,0 +1,16 @@
+thead, tfoot {
+  background-color: #133b74;
+  color: white;
+}
+
+#info {
+  vertical-align: middle;
+}
+
+input {
+  width: 80%;
+}
+
+table {
+  vertical-align: middle;
+}

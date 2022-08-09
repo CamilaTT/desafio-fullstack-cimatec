@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-7 mb-2">
+      <br><br><br><br><br><br><br><br><br>
+      <img class="img-fluid d-none d-sm-block"
+      src="assets/img/Ranger.png"
+      alt="Imagem Ranger">
+    </div>
+    <div class="col-md-5">
+      <br><br><br>
+      <div class="text-center">
+              <img src="assets/img/logo.png" alt="Logo Ford" width="150px">
+      </div>
+      <br><br><br><br><br>
+      <h4 class="text-center">Boas-vindas</h4>
+    <form class="form mt-4" (ngSubmit)="login()" #loginForm="ngForm">
+      <div class="form-group">
+        <input class="form-control" placeholder="Nome de usuário"
+        [(ngModel)]="usuario" name="usuario" #campoUsuario="ngModel" required/>
+        <app-message
+        *ngIf="campoUsuario.invalid && campoUsuario.touched"
+        mensagem="Usuário obrigatório"></app-message>
+      </div>
+      <br>
+      <div class="form-group">
+        <input type="password" class="form-control" placeholder="Senha"
+        [(ngModel)]="senha" name="senha" #campoSenha="ngModel" required/>
+        <app-message
+          *ngIf="campoSenha.invalid && campoSenha.touched"
+          mensagem="Senha obrigatória"></app-message>
+      </div>
+      <br>
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary btn-block" [disabled]="loginForm.invalid">Login</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
