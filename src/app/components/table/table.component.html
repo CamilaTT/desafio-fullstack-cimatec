@@ -1,0 +1,40 @@
+<table class="table">
+  <thead>
+    <tr id="header">
+      <td>Código - Vin</td>
+      <td>Odômetro</td>
+      <td>Nível de combustível</td>
+      <td>Status</td>
+      <td>Lat.</td>
+      <td>Long.</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><input type="search" aria-label="campo de busca"
+        class="form-control" placeholder="Insira o código do veículo"
+        [formControl]="queryField">
+      </td>
+      <td *ngIf="vehicles$ | async as vehicle">
+        {{ vehicle[0].odometer }} Km
+      </td>
+      <td *ngIf="vehicles$ | async as vehicle">
+        {{ vehicle[0].fuelLevel }}%
+      </td>
+      <td *ngIf="vehicles$ | async as vehicle">
+        {{ vehicle[0].status }}
+      </td>
+      <td *ngIf="vehicles$ | async as vehicle">
+        {{ vehicle[0].lat }}
+      </td>
+      <td *ngIf="vehicles$ | async as vehicle">
+        {{ vehicle[0].long }}
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="6"></td>
+    </tr>
+  </tfoot>
+</table>

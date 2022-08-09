@@ -1,0 +1,13 @@
+.card {
+  width: 200px;
+}
+
+.card-header {
+  background-color: #133b74;
+  color: white;
+}
+
+.col-md-12 {
+  padding-top: 20px;
+}
+
