@@ -18,10 +18,10 @@
 ## Como rodar o back-end (api)
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/CamilaTT/desafio-angular>
+$ git clone <https://github.com/CamilaTT/desafio-fullstack-cimatec>
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd desafio-angular
+$ cd desafio-fullstack-cimatec
 
 # Siga para a pasta api
 $ cd api
@@ -38,10 +38,7 @@ $ npm start
 ## Como rodar o front-end (servidor angular)
 ```bash
 # Com este repositório já clonado, acesse a pasta do projeto em outro terminal/cmd
-$ cd desafio-angular
-
-# Siga para a pasta sistema
-$ cd sistema
+$ cd desafio-fullstack-cimatec
 
 # Instale as dependências
 $ npm install
