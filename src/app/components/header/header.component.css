@@ -1,0 +1,60 @@
+.fa {
+  padding-left: 25px;
+  color: #0047ab;
+}
+
+.fa:hover, #logout:hover {
+  cursor: pointer;
+}
+
+.navbar {
+  padding: 5px;
+}
+
+.navbar-text {
+  padding-right: 25px;
+}
+
+#userIcon {
+  padding-right: 5px;
+}
+
+#userName {
+  padding-right: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+#logout {
+  padding-right: 25px;
+  color: #0047ab;
+  font-size: medium;
+}
+
+.item-menu {
+  padding: 15px;
+  color: rgb(5, 5, 5);
+  font-size: large;
+  text-decoration: none;
+}
+
+.item-menu:hover {
+  background-color: #F8F8FF;
+}
+
+.item-menu-active {
+  border-left: 5px solid #0047ab;
+}
+
+li {
+  padding: 15px;
+  padding-left: 0;
+}
+
+li:hover {
+  background-color: #F8F8FF;
+}
+
+.list-unstyled {
+  padding: 0;
+}

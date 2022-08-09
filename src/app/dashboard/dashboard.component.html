@@ -1,0 +1,46 @@
+<app-header></app-header>
+<section class="container">
+  <div class="text-center title"><h2><strong>Dashboard FORD</strong></h2></div>
+  <div class="row">
+    <div class="col">
+      <app-card>
+        <h5 class="card-header">Veículo</h5>
+        <select class="form-select" (change)="selectVehicle($event)">
+          <option selected disabled>selecione um veículo</option>
+          <option *ngFor="let option of vehiclesList" [value]="option.id">{{ option.vehicle }}</option>
+        </select>
+      </app-card>
+    </div>
+
+    <div class="col">
+      <app-card>
+        <h5 class="card-header">Total de Vendas</h5>
+        <h4 class="card-title">{{ selectedVehicle?.volumetotal }}</h4>
+        <p class="card-text">Unid.</p>
+      </app-card>
+    </div>
+
+    <div class="col">
+      <app-card>
+        <h5 class="card-header">Conectados</h5>
+        <h4 class="card-title">{{ selectedVehicle?.connected }}</h4>
+        <p class="card-text">Unid.</p>
+      </app-card>
+    </div>
+
+    <div class="col">
+      <app-card>
+        <h5 class="card-header">Software Updates</h5>
+        <h4 class="card-title">{{ selectedVehicle?.softwareUpdates }}</h4>
+        <p class="card-text">Unid.</p>
+      </app-card>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="selectedVehicle as selectCar">
+    <div class="col text-center img">
+      <img src="assets/img/{{ selectCar.vehicle }}.png" class="rounded" width="50%">
+    </div>
+  </div>
+</section>
+<app-table></app-table>
