@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Veiculo, Veiculos } from '../models/veiculos/vehicles';
+import { Veiculo, Veiculos } from '../../models/veiculos/vehicles';
 import { SelectService } from './services/select.service';
 import { VehiclesDataService } from './services/vehicles-data.service';
 
@@ -22,13 +22,13 @@ export class DashboardComponent implements OnInit {
     })
 
     this.selectService.getSelectedVehicle(this.initialId).subscribe(
-      value => this.selectedVehicle = value
+      value => this.selectedVehicle = value[0]
     )
   }
 
   selectVehicle(e: any) {
     const ID = e.target.value
     return this.selectService.getSelectedVehicle(ID)
-      .subscribe(value => this.selectedVehicle = value)
+      .subscribe(value => this.selectedVehicle = value[0])
   }
 }

@@ -1,11 +1,11 @@
-import { TableModule } from './../components/table/table.module';
-import { CardModule } from './../components/card/card.module';
+import { CardModule } from '../../components/card/card.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
-import { HeaderModule } from '../components/header/header.module';
+import { HeaderModule } from '../../components/header/header.module';
+import { TableModule } from 'src/app/components/table/table.module';
 
 
 @NgModule({
@@ -17,7 +17,7 @@ import { HeaderModule } from '../components/header/header.module';
     DashboardRoutingModule,
     HeaderModule,
     CardModule,
-    TableModule
+    TableModule 
   ]
 })
 export class DashboardModule { }

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Veiculo } from 'src/app/models/veiculos/vehicles';
+import { Veiculos } from 'src/app/models/veiculos/vehicles';
 import { API_URL } from 'src/environments/environment.prod';
 
 @Injectable({
@@ -11,7 +11,7 @@ export class SelectService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getSelectedVehicle(id: number):Observable<Veiculo> {
-    return this.httpClient.get<Veiculo>(`${API_URL}vehicle/${id}`)
+  getSelectedVehicle(id: number):Observable<Veiculos> {
+    return this.httpClient.get<Veiculos>(`${API_URL}vehicle/${id}`)
   }
 }
