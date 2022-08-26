@@ -1,4 +1,4 @@
-import { VehiclesDataService } from './../../dashboard/services/vehicles-data.service';
+import { VehiclesDataService } from 'src/app/pages/dashboard/services/vehicles-data.service';
 import { Component, OnInit } from '@angular/core';
 import { VehiclesData } from 'src/app/models/veiculos/vehicles-data';
 import { FormControl } from '@angular/forms';

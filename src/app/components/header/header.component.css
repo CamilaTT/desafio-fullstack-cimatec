@@ -1,6 +1,6 @@
 .fa {
   padding-left: 25px;
-  color: #0047ab;
+  color: #00274E;
 }
 
 .fa:hover, #logout:hover {
@@ -27,7 +27,7 @@
 
 #logout {
   padding-right: 25px;
-  color: #0047ab;
+  color: #00274E;
   font-size: medium;
 }
 
@@ -39,11 +39,11 @@
 }
 
 .item-menu:hover {
-  background-color: #F8F8FF;
+  background-color: #ffffff;
 }
 
 .item-menu-active {
-  border-left: 5px solid #0047ab;
+  border-left: 5px solid #00274E;
 }
 
 li {
@@ -52,7 +52,7 @@ li {
 }
 
 li:hover {
-  background-color: #F8F8FF;
+  background-color: #ffffff;
 }
 
 .list-unstyled {

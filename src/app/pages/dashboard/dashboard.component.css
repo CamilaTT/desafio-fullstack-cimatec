@@ -1,0 +1,39 @@
+.title {
+  margin-top: 0px;
+  margin-bottom: 12px;
+}
+
+.title, .card-title {
+  color: #00274E;
+}
+
+.card-title, .card-text {
+  text-align: end;
+}
+
+.img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 50px;
+}
+
+.card-header {
+  background-color: #00274E;
+  color: #ffffff;
+}
+
+select {
+  margin-top: 22px;
+}
+
+#mid {
+  padding-top: 5px;
+}
+
+section {
+  margin-bottom: 5px;
+}
+
+.col-5 {
+  padding-left: 0;
+}
