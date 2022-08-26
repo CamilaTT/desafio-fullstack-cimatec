@@ -1,4 +1,5 @@
 import { ChartModule } from './../../components/chart/chart.module';
+
 import { CardModule } from '../../components/card/card.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
