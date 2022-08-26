@@ -22,13 +22,13 @@ export class DashboardComponent implements OnInit {
     })
 
     this.selectService.getSelectedVehicle(this.initialId).subscribe(
-      value => this.selectedVehicle = value
+      value => this.selectedVehicle = value[0]
     )
   }
 
   selectVehicle(e: any) {
     const ID = e.target.value
     return this.selectService.getSelectedVehicle(ID)
-      .subscribe(value => this.selectedVehicle = value)
+      .subscribe(value => this.selectedVehicle = value[0])
   }
 }
