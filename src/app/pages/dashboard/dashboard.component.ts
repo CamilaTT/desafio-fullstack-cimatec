@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Veiculo, Veiculos } from '../models/veiculos/vehicles';
+import { Veiculo, Veiculos } from '../../models/veiculos/vehicles';
 import { SelectService } from './services/select.service';
 import { VehiclesDataService } from './services/vehicles-data.service';
 
