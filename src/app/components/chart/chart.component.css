@@ -1,0 +1,11 @@
+div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#canvas_connected, #canvas_softUpdates {
+  padding-top: 10px;
+  max-width: 320px;
+  max-height: 220px;
+}

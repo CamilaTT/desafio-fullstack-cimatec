@@ -37,9 +37,12 @@
     </div>
   </div>
 
-  <div class="row" *ngIf="selectedVehicle as selectCar">
-    <div class="col text-center img">
-      <img src="assets/img/{{ selectCar.vehicle }}.png" class="rounded" width="50%">
+  <div class="row" id="mid">
+    <div class="col-6 img" *ngIf="selectedVehicle as selectCar">
+      <img src="assets/img/{{ selectCar.vehicle }}.png" class="rounded mx-auto d-block" width="500px">
+    </div>
+    <div class="col-5 ">
+      <app-chart></app-chart>
     </div>
   </div>
 </section>
