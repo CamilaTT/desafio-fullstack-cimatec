@@ -1,5 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { CadastroUsuarioService } from './cadastro-usuario.service';
@@ -12,6 +13,8 @@ describe('CadastroUsuarioService', () => {
       imports: [
         HttpClientTestingModule,
         RouterTestingModule.withRoutes([]),
+        FormsModule,
+        ReactiveFormsModule
       ],
     });
     service = TestBed.inject(CadastroUsuarioService);

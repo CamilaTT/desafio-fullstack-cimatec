@@ -1,3 +1,4 @@
+import { ModalModule } from './../../components/modal/modal.module';
 import { ChartModule } from './../../components/chart/chart.module';
 
 import { CardModule } from '../../components/card/card.module';
@@ -20,7 +21,8 @@ import { TableModule } from 'src/app/components/table/table.module';
     HeaderModule,
     CardModule,
     TableModule,
-    ChartModule
+    ChartModule,
+    ModalModule
   ]
 })
 export class DashboardModule { }

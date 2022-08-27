@@ -11,9 +11,26 @@
   </thead>
   <tbody>
     <tr>
-      <td><input type="search" aria-label="campo de busca"
+      <td scope="row" class="btn-group">
+        <input type="search" aria-label="campo de busca"
         class="form-control" placeholder="Insira o código do veículo"
-        [formControl]="queryField">
+        [formControl]="queryField"
+        >
+
+        <button type="button" class="btn" aria-hidden="true" title="adicionar"
+          data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <i class="fa fa-plus" ></i>
+        </button>
+
+        <button type="button" class="btn" aria-hidden="true" title="editar"
+        data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          <i class="fa fa-pencil"></i>
+        </button>
+
+        <button type="button" class="btn" aria-hidden="true" title="excluir"
+        >
+          <i class="fa fa-trash"></i>
+        </button>
       </td>
       <td *ngIf="vehicles$ | async as vehicle">
         {{ vehicle[0].odometer }} Km
