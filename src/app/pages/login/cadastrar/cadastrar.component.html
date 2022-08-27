@@ -1,0 +1,61 @@
+<br>
+<h4 class="text-center">Cadastre-se</h4>
+<form class="form mt-4" [formGroup]="novoUsuarioForm" (submit)="register()">
+  <div class="form-group">
+    <input placeholder="E-mail" class="form-control" formControlName="email">
+  </div>
+  <app-message
+    *ngIf="novoUsuarioForm.get('email')?.errors?.['required'] &&
+    novoUsuarioForm.get('email')?.touched"
+    mensagem="E-mail obrigatório">
+  </app-message>
+  <app-message
+    *ngIf="novoUsuarioForm.get('email')?.errors?.['email'] &&
+    novoUsuarioForm.get('email')?.touched"
+    mensagem="Formato de e-mail inválido">
+  </app-message>
+  <br>
+  <div class="form-group">
+    <input placeholder="Nome completo" class="form-control" formControlName="fullName">
+  </div>
+  <app-message
+    *ngIf="novoUsuarioForm.get('fullName')?.errors?.['required'] &&
+    novoUsuarioForm.get('fullName')?.touched"
+    mensagem="Nome completo obrigatório">
+  </app-message>
+  <br>
+  <div class="form-group">
+    <input placeholder="Usuário" class="form-control" formControlName="userName">
+  </div>
+  <app-message
+    *ngIf="novoUsuarioForm.get('userName')?.errors?.['required'] &&
+    novoUsuarioForm.get('userName')?.touched"
+    mensagem="Nome de usuário obrigatório">
+  </app-message>
+  <br>
+  <div class="form-group">
+    <input type="password" placeholder="Senha" class="form-control" formControlName="password">
+  </div>
+  <app-message
+    *ngIf="novoUsuarioForm.get('password')?.errors?.['required'] &&
+    novoUsuarioForm.get('password')?.touched"
+    mensagem="Senha obrigatória">
+  </app-message>
+  <br>
+  <p id="consent">
+    Os dados serão mantidos em nossa base de dados só enquanto for desejado por você.
+    A qualquer momento, será possível editar ou remover tais dados.
+    <a href="https://www.ford.com.br/politica-de-privacidade/">Termos e Condições
+    </a>
+  </p><br>
+  <input type="checkbox" class="form-check-input" id="check-terms">
+  <label class="form-check-label" for="check-terms">
+    Sim. Li e concordo com os termos.
+  </label>
+  <div class="d-grid gap-2">
+    <button type="submit" class="btn btn-primary btn-block" [disabled]="!novoUsuarioForm.valid">
+      Cadastrar
+    </button>
+  </div>
+</form>
+<p><strong>Já é um usuário? </strong><a [routerLink]="['']">Faça login.</a></p>
