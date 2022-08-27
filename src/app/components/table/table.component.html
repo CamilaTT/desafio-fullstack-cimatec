@@ -45,7 +45,7 @@
         {{ vehicle[0].lat }}
       </td>
       <td *ngIf="vehicles$ | async as vehicle">
-        {{ vehicle[0].long }}
+        {{ vehicle[0]._long }}
       </td>
     </tr>
   </tbody>

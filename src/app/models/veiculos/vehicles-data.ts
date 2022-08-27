@@ -6,7 +6,7 @@ export interface VehicleData {
   status: boolean | null
   fuelLevel: number | string
   lat: number | string
-  long: number | string
+  _long: number | string
 
 }
 
