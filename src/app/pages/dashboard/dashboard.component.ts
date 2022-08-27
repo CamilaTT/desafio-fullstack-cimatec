@@ -36,6 +36,6 @@ export class DashboardComponent implements OnInit {
     return this.selectService.getSelectedVehicle(ID).subscribe(value => {
         this.selectedVehicle = value[0]
         this.chartService.chartsUpdates(ID)
-      })
+    })
   }
 }
