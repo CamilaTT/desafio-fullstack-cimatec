@@ -33,10 +33,9 @@ export class DashboardComponent implements OnInit {
 
   selectVehicle(e: any) {
     const ID = e.target.value
-    return this.selectService.getSelectedVehicle(ID).subscribe(
-      value => {
+    return this.selectService.getSelectedVehicle(ID).subscribe(value => {
         this.selectedVehicle = value[0]
         this.chartService.chartsUpdates(ID)
-      })
+    })
   }
 }

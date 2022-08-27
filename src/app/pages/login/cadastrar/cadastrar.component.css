@@ -1,0 +1,30 @@
+form {
+  margin-bottom: 8px;
+}
+
+button {
+  margin-top: 6px;
+  margin-bottom: 5px;
+}
+
+#consent {
+  font-size: small;
+  text-align: justify;
+  margin-bottom: 0;
+}
+
+.form-check-input {
+  margin-right: 5px;
+}
+
+label {
+  font-size: small;
+}
+
+p {
+  float: right;
+}
+
+a {
+  text-decoration: none;
+}
