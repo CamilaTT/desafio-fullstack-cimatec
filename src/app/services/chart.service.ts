@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Chart } from 'chart.js';
-import { SelectService } from './select.service';
+import { VehicleService } from './vehicle.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +10,12 @@ export class ChartService {
   connectedChart: any = []
   softUpdatesChart: any = []
 
-  constructor(private selectService: SelectService) { }
+  constructor(private vehicleService: VehicleService) { }
 
   chartsUpdates(s: any) {
     this.connectedChart.destroy()
     this.softUpdatesChart.destroy()
-    this.selectService.getSelectedVehicle(s).subscribe(res => {
+    this.vehicleService.getSelectedVehicle(s).subscribe(res => {
       this.drawConnectedChart(res[0]);
       this.drawSoftUpdatesChart(res[0]);
     })

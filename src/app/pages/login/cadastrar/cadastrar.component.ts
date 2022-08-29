@@ -41,14 +41,12 @@ export class CadastrarComponent implements OnInit {
         this.router.navigate(['']);
       },
         (error) => {
-          if(error) {
             Swal.fire(
               {
                 text: 'Não foi possível realizar o cadastro. Tente usar outro nome de usuário!',
                 confirmButtonColor: '#00274E'
               }
             )
-          }
         }
       )
     }

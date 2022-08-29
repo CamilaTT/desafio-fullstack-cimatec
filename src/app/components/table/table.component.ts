@@ -1,10 +1,9 @@
-import { VehiclesDataService } from 'src/app/pages/dashboard/services/vehicles-data.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { map, filter, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
-import Swal from 'sweetalert2';
-import { CrudService } from 'src/app/pages/dashboard/services/crud.service';
+import { CrudService } from 'src/app/services/crud.service';
 import { VehicleData } from 'src/app/models/veiculos/vehicles-data';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-table',
@@ -22,16 +21,14 @@ export class TableComponent implements OnInit {
     filter(value => value.length > 4),
     debounceTime(1000),
     distinctUntilChanged(),
-    switchMap((value) => this.vehiclesDataService.getVehicleData(value))
+    switchMap((value) => this.crudService.getVehicleData(value))
     )
     .subscribe((value) => {
-      if(value.length < 2) this.vehicleData = value}
+      if(value.length < 2) this.vehicleData = value 
+    }
     )
 
-  constructor(
-    private vehiclesDataService: VehiclesDataService,
-    private crudService: CrudService
-  ) { }
+  constructor(private crudService: CrudService) { }
 
   ngOnInit(): void {}
 
@@ -68,5 +65,4 @@ export class TableComponent implements OnInit {
           }
       })
   }
-
 }

@@ -13,7 +13,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    SweetAlert2Module
+    SweetAlert2Module,
   ],
   exports: [
     TableComponent

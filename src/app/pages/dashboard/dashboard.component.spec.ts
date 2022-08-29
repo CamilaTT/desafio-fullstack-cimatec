@@ -1,10 +1,10 @@
-import { VehiclesDataService } from './services/vehicles-data.service';
-import { SelectService } from './services/select.service';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { DashboardComponent } from './dashboard.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { VehicleService } from '../../services/vehicle.service';
+import { ChartService } from 'src/app/services/chart.service';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -18,7 +18,7 @@ describe('DashboardComponent', () => {
       ],
       declarations: [ DashboardComponent ],
       providers: [
-        SelectService, VehiclesDataService
+        VehicleService, ChartService
       ]
     })
     .compileComponents();

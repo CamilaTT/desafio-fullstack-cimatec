@@ -6,38 +6,38 @@
       </div>
       <div class="modal-body">
 
-        <form>
-          <div class="mb-3">
+        <form class="form" [formGroup]="vehicleDataForm">
+          <div class="form-group mt-3">
             <label for="vin" class="form-label">Vin</label>
-            <input type="text" class="form-control" id="vin" name="vin">
+            <input class="form-control" id="vin" formControlName="vin">
           </div>
-          <div class="mb-3">
+          <div class="form-group mt-3">
             <label for="odometer" class="form-label">Odômetro</label>
-            <input type="text" class="form-control" id="odometer" name="odometer">
+            <input placeholder="Km" class="form-control" id="odometer" formControlName="odometer">
           </div>
-          <div class="mb-3">
+          <div class="form-group mt-3">
             <label for="tirePressure" class="form-label">Pressão dos pneus</label>
-            <input type="text" class="form-control" id="tirePressure" name="tirePressure">
+            <input placeholder="ex: 36,36,36,36" class="form-control" id="tirePressure" formControlName="tirePressure">
           </div>
-          <div class="mb-3">
+          <div class="form-group mt-3">
             <label for="fuelLevel" class="form-label">Nível de combustível</label>
-            <input type="text" class="form-control" id="fuelLevel" name="fuelLevel">
+            <input placeholder="%" class="form-control" id="fuelLevel" formControlName="fuelLevel">
           </div>
-          <div class="mb-3">
+          <div class="form-group mt-3">
             <label for="status" class="form-label">Status</label>
-            <input type="text" class="form-control" id="status" name="status">
+            <input placeholder="ex: On/Off" class="form-control" id="status" formControlName="status">
           </div>
-          <div class="mb-3">
-            <label for="batterStatus" class="form-label">Status da bateria</label>
-            <input type="text" class="form-control" id="batterStatus" name="batteryStatus">
+          <div class="form-group mt-3">
+            <label for="batteryStatus" class="form-label">Status da bateria</label>
+            <input placeholder="ex: Ok/Recharge" class="form-control" id="batteryStatus" formControlName="batteryStatus">
           </div>
-          <div class="mb-3">
+          <div class="form-group mt-3">
             <label for="latitude" class="form-label">Latitude</label>
-            <input type="text" class="form-control" id="latitude" name="lat">
+            <input class="form-control" id="latitude" formControlName="lat">
           </div>
-          <div class="mb-3">
+          <div class="form-group mt-3">
             <label for="longitude" class="form-label">Longitude</label>
-            <input type="text" class="form-control" id="longitude" name="_long"> 
+            <input class="form-control" id="longitude" formControlName="_long"> 
           </div>
         </form>
 

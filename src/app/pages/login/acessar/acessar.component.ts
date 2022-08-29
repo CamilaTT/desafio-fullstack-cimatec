@@ -21,14 +21,12 @@ export class AcessarComponent {
       this.router.navigate(['home']);
       console.log(this.usuario, this.senha)
     }, (error) => {
-        if(error) {
           Swal.fire(
             {
               text: 'Nome de usuário e/ou senha não confere(m). Por favor, verifique e tente novamente.',
               confirmButtonColor: '#00274E'
             }
           )
-        }
       })
   }
 }

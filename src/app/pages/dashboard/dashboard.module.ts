@@ -22,7 +22,7 @@ import { TableModule } from 'src/app/components/table/table.module';
     CardModule,
     TableModule,
     ChartModule,
-    ModalModule
+    ModalModule 
   ]
 })
 export class DashboardModule { }
