@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NovoUsuario } from 'src/app/models/usuario/novo-usuario';
 import { CadastroUsuarioService } from './cadastro-usuario.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cadastrar',
@@ -39,12 +40,17 @@ export class CadastrarComponent implements OnInit {
       this.cadastroUsuarioService.userRegister(novoUsuario).subscribe(() => {
         this.router.navigate(['']);
       },
-        (error) =>
-          alert('Não foi possível realizar o cadastro. Tente novamente!')
+        (error) => {
+          if(error) {
+            Swal.fire(
+              {
+                text: 'Não foi possível realizar o cadastro. Tente usar outro nome de usuário!',
+                confirmButtonColor: '#00274E'
+              }
+            )
+          }
+        }
       )
     }
   }
-
-
-
 }
