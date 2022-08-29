@@ -23,9 +23,10 @@ export class CadastrarComponent implements OnInit {
 
     this.novoUsuarioForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      fullName: ['', [Validators.required]],
-      userName: ['', [Validators.required]],
-      password: ['', [Validators.required]]
+      fullName: ['', Validators.required],
+      userName: ['', Validators.required],
+      password: ['', Validators.required],
+      terms: [false, Validators.pattern('true')]
     })
   }
 

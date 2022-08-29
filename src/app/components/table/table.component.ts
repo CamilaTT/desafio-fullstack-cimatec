@@ -53,7 +53,7 @@ export class TableComponent implements OnInit {
             })
             Swal.fire(
               {
-                title: 'Veículo excluído com sucesso!',
+                title: 'Registro excluído com sucesso!',
                 icon: 'success',
                 confirmButtonColor: '#00274E'
               }
