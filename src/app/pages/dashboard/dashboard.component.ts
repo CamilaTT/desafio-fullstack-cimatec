@@ -1,8 +1,9 @@
 import { ChartService } from 'src/app/pages/dashboard/services/chart.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Veiculo, Veiculos } from '../../models/veiculos/vehicles';
 import { SelectService } from './services/select.service';
 import { VehiclesDataService } from './services/vehicles-data.service';
+import { VehicleData } from 'src/app/models/veiculos/vehicles-data';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,6 +15,8 @@ export class DashboardComponent implements OnInit {
   initialId = 1;
   vehiclesList: Veiculos = []
   selectedVehicle: Veiculo | null = null
+
+  @Input() vehicleData!: VehicleData | any
 
   constructor(
     private vehicleDataService: VehiclesDataService,

@@ -13,8 +13,6 @@ export class CadastrarComponent implements OnInit {
 
   novoUsuarioForm!: FormGroup;
 
-  checkbox: any = document.getElementById('check-terms')
-
   constructor(
     private formBuilder: FormBuilder,
     private cadastroUsuarioService: CadastroUsuarioService,
@@ -29,10 +27,6 @@ export class CadastrarComponent implements OnInit {
       userName: ['', [Validators.required]],
       password: ['', [Validators.required]]
     })
-  }
-
-  ngOnChanges() {
-    console.log(this.checkbox.value)
   }
 
   register() {
