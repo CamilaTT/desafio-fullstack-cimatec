@@ -42,7 +42,7 @@ Para executar essa aplicação em ambiente de desenvolvimento, você precisa ter
 * [GIT](https://git-scm.com/)
 * [Node.js](https://nodejs.org/en/)
 * [MySQL Workbench (para criação do banco de dados)](https://www.mysql.com/products/workbench/)
-* [Postman (para teste dos métodos da api - opcional](https://www.postman.com/downloads/)
+* [Postman (para teste dos métodos da api - opcional)](https://www.postman.com/downloads/)
 
 ### Preparando o ambiente
  #### Para o backend 
