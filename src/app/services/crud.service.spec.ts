@@ -1,11 +1,11 @@
-import { TestBed } from '@angular/core/testing';
-
-import { SelectService } from './select.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-describe('SelectService', () => {
-  let service: SelectService;
+import { CrudService } from './crud.service';
+
+describe('CrudService', () => {
+  let service: CrudService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -14,10 +14,10 @@ describe('SelectService', () => {
         RouterTestingModule.withRoutes([]),
       ],
       providers: [
-        SelectService
+        CrudService
       ]
     });
-    service = TestBed.inject(SelectService);
+    service = TestBed.inject(CrudService);
   });
 
   it('should be created', () => {

@@ -18,36 +18,40 @@
         >
 
         <button type="button" class="btn" aria-hidden="true" title="adicionar"
-          data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            <i class="fa fa-plus" ></i>
+          data-bs-toggle="modal" data-bs-target="#addModal">
+            <i class="fa fa-plus"></i>
         </button>
 
-        <button type="button" class="btn" aria-hidden="true" title="editar"
-        data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <button type="button" class="btn" aria-hidden="true" title="atualizar"
+        data-bs-toggle="modal" data-bs-target="#updateModal"
+        [disabled]="!vehicleData"> 
           <i class="fa fa-pencil"></i>
         </button>
 
-        <button type="button" class="btn" aria-hidden="true" title="excluir"
-        >
+        <button type="button" class="btn" aria-hidden="true" title="deletar"
+        (click)="confirmDelete()" [disabled]="!vehicleData">
+          data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <i class="fa fa-plus" ></i>
+        </button>
           <i class="fa fa-trash"></i>
         </button>
       </td>
-      <td *ngIf="vehicles$ | async as vehicle">
-        {{ vehicle[0].odometer }} Km
+      <td *ngIf="vehicleData">
+        {{ vehicleData[0].odometer }} Km
       </td>
-      <td *ngIf="vehicles$ | async as vehicle">
-        {{ vehicle[0].fuelLevel }}%
+      <td *ngIf="vehicleData">
+        {{ vehicleData[0].fuelLevel }}%
       </td>
-      <td *ngIf="vehicles$ | async as vehicle">
-        {{ vehicle[0].status }}
+      <td *ngIf="vehicleData">
+        {{ vehicleData[0].status }}
       </td>
-      <td *ngIf="vehicles$ | async as vehicle">
-        {{ vehicle[0].lat }}
+      <td *ngIf="vehicleData">
+        {{ vehicleData[0].lat }}
       </td>
-      <td *ngIf="vehicles$ | async as vehicle">
-        {{ vehicle[0].long }}
+      <td *ngIf="vehicleData">
+        {{ vehicleData[0]._long }}
       </td>
-    </tr>
+    </tr> 
   </tbody>
   <tfoot>
     <tr>

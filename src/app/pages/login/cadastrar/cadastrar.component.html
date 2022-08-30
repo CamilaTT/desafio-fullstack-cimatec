@@ -1,7 +1,7 @@
 <br>
 <h4 class="text-center">Cadastre-se</h4>
 <form class="form mt-4" [formGroup]="novoUsuarioForm" (submit)="register()">
-  <div class="form-group">
+  <div class="form-group mt-3">
     <input placeholder="E-mail" class="form-control" formControlName="email">
   </div>
   <app-message
@@ -14,8 +14,7 @@
     novoUsuarioForm.get('email')?.touched"
     mensagem="Formato de e-mail inválido">
   </app-message>
-  <br>
-  <div class="form-group">
+  <div class="form-group mt-3">
     <input placeholder="Nome completo" class="form-control" formControlName="fullName">
   </div>
   <app-message
@@ -23,8 +22,7 @@
     novoUsuarioForm.get('fullName')?.touched"
     mensagem="Nome completo obrigatório">
   </app-message>
-  <br>
-  <div class="form-group">
+  <div class="form-group mt-3">
     <input placeholder="Usuário" class="form-control" formControlName="userName">
   </div>
   <app-message
@@ -32,8 +30,8 @@
     novoUsuarioForm.get('userName')?.touched"
     mensagem="Nome de usuário obrigatório">
   </app-message>
-  <br>
-  <div class="form-group">
+  
+  <div class="form-group mt-3">
     <input type="password" placeholder="Senha" class="form-control" formControlName="password">
   </div>
   <app-message
@@ -41,20 +39,23 @@
     novoUsuarioForm.get('password')?.touched"
     mensagem="Senha obrigatória">
   </app-message>
-  <br>
-  <p id="consent">
-    Os dados serão mantidos em nossa base de dados só enquanto for desejado por você.
-    A qualquer momento, será possível editar ou remover tais dados.
-    <a href="https://www.ford.com.br/politica-de-privacidade/">Termos e Condições
-    </a>
-  </p><br>
-  <input type="checkbox" class="form-check-input" id="check-terms">
-  <label class="form-check-label" for="check-terms">
-    Sim. Li e concordo com os termos.
-  </label>
+  <div class="form-group mt-3">
+    <p id="consent">
+        Os dados serão mantidos em nossa base de dados só enquanto for desejado por você.
+        A qualquer momento, será possível editar ou remover tais dados.
+        <a href="https://www.ford.com.br/politica-de-privacidade/">Termos e Condições
+        </a>
+      </p>
+      <div class="checkbox">
+        <input type="checkbox" class="form-check-input form-control" id="check-terms" formControlName="terms">
+        <label class="form-check-label" for="check-terms">
+          Sim. Li e concordo com os termos.
+        </label>
+      </div>
+  </div>
   <div class="d-grid gap-2">
-    <button type="submit" class="btn btn-primary btn-block" [disabled]="!novoUsuarioForm.valid">
-      Cadastrar
+    <button type="submit" class="btn btn-primary btn-block" [disabled]="novoUsuarioForm.invalid">
+      Cadastrar 
     </button>
   </div>
 </form>

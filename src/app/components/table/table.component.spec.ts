@@ -1,7 +1,7 @@
+import { CrudService } from '../../services/crud.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { VehiclesDataService } from 'src/app/pages/dashboard/services/vehicles-data.service';
 
 import { TableComponent } from './table.component';
 
@@ -17,7 +17,7 @@ describe('TableComponent', () => {
         RouterTestingModule.withRoutes([]),
       ],
       providers: [
-        VehiclesDataService
+        CrudService
       ]
 
     })

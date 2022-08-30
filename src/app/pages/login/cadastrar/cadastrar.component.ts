@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NovoUsuario } from 'src/app/models/usuario/novo-usuario';
 import { CadastroUsuarioService } from './cadastro-usuario.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cadastrar',
@@ -12,8 +13,6 @@ import { CadastroUsuarioService } from './cadastro-usuario.service';
 export class CadastrarComponent implements OnInit {
 
   novoUsuarioForm!: FormGroup;
-
-  checkbox: any = document.getElementById('check-terms')
 
   constructor(
     private formBuilder: FormBuilder,
@@ -25,14 +24,11 @@ export class CadastrarComponent implements OnInit {
 
     this.novoUsuarioForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      fullName: ['', [Validators.required]],
-      userName: ['', [Validators.required]],
-      password: ['', [Validators.required]]
+      fullName: ['', Validators.required],
+      userName: ['', Validators.required],
+      password: ['', Validators.required],
+      terms: [false, Validators.pattern('true')]
     })
-  }
-
-  ngOnChanges() {
-    console.log(this.checkbox.value)
   }
 
   register() {
@@ -44,12 +40,15 @@ export class CadastrarComponent implements OnInit {
       this.cadastroUsuarioService.userRegister(novoUsuario).subscribe(() => {
         this.router.navigate(['']);
       },
-        (error) =>
-          alert('Não foi possível realizar o cadastro. Tente novamente!')
+        (error) => {
+            Swal.fire(
+              {
+                text: 'Não foi possível realizar o cadastro. Tente usar outro nome de usuário!',
+                confirmButtonColor: '#00274E'
+              }
+            )
+        }
       )
     }
   }
-
-
-
 }

@@ -1,12 +1,12 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { VehiclesDataService } from './vehicles-data.service';
+import { ChartService } from './chart.service';
+import { VehicleService } from './vehicle.service';
 
-describe('VehiclesDataService', () => {
-  let service: VehiclesDataService;
+describe('ChartService', () => {
+  let service: ChartService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -15,10 +15,10 @@ describe('VehiclesDataService', () => {
         RouterTestingModule.withRoutes([]),
       ],
       providers: [
-        VehiclesDataService
+        VehicleService
       ]
     });
-    service = TestBed.inject(VehiclesDataService);
+    service = TestBed.inject(ChartService);
   });
 
   it('should be created', () => {

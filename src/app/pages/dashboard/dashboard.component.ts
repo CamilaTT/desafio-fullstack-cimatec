@@ -1,8 +1,8 @@
-import { ChartService } from 'src/app/pages/dashboard/services/chart.service';
-import { Component, OnInit } from '@angular/core';
+import { ModalComponent } from './../../components/modal/modal.component';
+import { ChartService } from 'src/app/services/chart.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Veiculo, Veiculos } from '../../models/veiculos/vehicles';
-import { SelectService } from './services/select.service';
-import { VehiclesDataService } from './services/vehicles-data.service';
+import { VehicleService } from '../../services/vehicle.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,25 +15,25 @@ export class DashboardComponent implements OnInit {
   vehiclesList: Veiculos = []
   selectedVehicle: Veiculo | null = null
 
+  @ViewChild(ModalComponent) modalComponent!: ModalComponent
+
   constructor(
-    private vehicleDataService: VehiclesDataService,
-    private selectService: SelectService,
-    private chartService: ChartService
+    private vehicleService: VehicleService, private chartService: ChartService
   ) { }
 
   ngOnInit(): void {
-    this.vehicleDataService.getVehicles().subscribe(res => {
+    this.vehicleService.getVehicles().subscribe(res => {
       this.vehiclesList = res.vehicles;
     })
 
-    this.selectService.getSelectedVehicle(this.initialId).subscribe(
+    this.vehicleService.getSelectedVehicle(this.initialId).subscribe(
       value => this.selectedVehicle = value[0]
     )
   }
 
   selectVehicle(e: any) {
     const ID = e.target.value
-    return this.selectService.getSelectedVehicle(ID).subscribe(value => {
+    return this.vehicleService.getSelectedVehicle(ID).subscribe(value => {
         this.selectedVehicle = value[0]
         this.chartService.chartsUpdates(ID)
     })

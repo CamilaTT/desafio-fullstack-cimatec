@@ -13,6 +13,12 @@ button {
   margin-bottom: 0;
 }
 
+.checkbox {
+ width: 100%;
+ display: flex;
+ flex-direction: row;
+}
+
 .form-check-input {
   margin-right: 5px;
 }
@@ -28,3 +34,5 @@ p {
 a {
   text-decoration: none;
 }
+
+
