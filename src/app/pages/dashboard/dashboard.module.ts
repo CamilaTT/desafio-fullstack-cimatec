@@ -23,6 +23,6 @@ import { TableModule } from 'src/app/components/table/table.module';
     TableModule,
     ChartModule,
     ModalModule 
-  ]
+  ] 
 })
 export class DashboardModule { }
