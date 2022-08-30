@@ -1,3 +1,4 @@
+
 import { VehicleData } from './../../models/veiculos/vehicles-data';
 import { CrudService } from '../../services/crud.service';
 import { Component, OnInit } from '@angular/core';
@@ -62,4 +63,3 @@ export class ModalComponent implements OnInit {
       )
     }
   }
-}

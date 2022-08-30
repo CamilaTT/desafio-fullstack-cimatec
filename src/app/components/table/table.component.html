@@ -22,7 +22,7 @@
             <i class="fa fa-plus"></i>
         </button>
 
-        <button type="button" class="btn btp-primary" aria-hidden="true" title="atualizar"
+        <button type="button" class="btn" aria-hidden="true" title="atualizar"
         data-bs-toggle="modal" data-bs-target="#updateModal"
         [disabled]="!vehicleData"> 
           <i class="fa fa-pencil"></i>
@@ -30,6 +30,9 @@
 
         <button type="button" class="btn" aria-hidden="true" title="deletar"
         (click)="confirmDelete()" [disabled]="!vehicleData">
+          data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <i class="fa fa-plus" ></i>
+        </button>
           <i class="fa fa-trash"></i>
         </button>
       </td>
