@@ -11,11 +11,11 @@ import { VehicleService } from '../../services/vehicle.service';
 })
 export class DashboardComponent implements OnInit {
 
+  @ViewChild(ModalComponent) modalComponent!: ModalComponent
+
   initialId = 1;
   vehiclesList: Veiculos = []
   selectedVehicle: Veiculo | null = null
-
-  @ViewChild(ModalComponent) modalComponent!: ModalComponent
 
   constructor(
     private vehicleService: VehicleService, private chartService: ChartService

@@ -1,6 +1,8 @@
 class vehicleTable {
     init(dbConnection) {
+    
         this.dbConnection = dbConnection; 
+
 
         this.createTable();
         this.insertDefaultVehicles();
@@ -23,9 +25,11 @@ class vehicleTable {
 
     insertDefaultVehicles() {
         this.insertVehicle('Ranger', 145760, 70000, 27550);
-		this.insertVehicle('Mustang', 1500, 500, 750);
-		this.insertVehicle('Territory', 4560, 4000, 3050);
-		this.insertVehicle('Bronco Sport', 7560, 4060, 2050);
+        this.insertVehicle('Mustang', 1500, 500, 750);
+        this.insertVehicle('Territory', 4560, 4000, 3050);
+        this.insertVehicle('Bronco Sport', 7560, 4060, 2050);
+        this.insertVehicle('Fusion', 29000, 20000, 17000);
+        this.insertVehicle('Maverick', 40000, 30000, 28150);
     }
 
     insertVehicle(vehicle, totalSales, connected, softwareUpdates) {
@@ -42,3 +46,4 @@ class vehicleTable {
 }
 
 module.exports = new vehicleTable;
+

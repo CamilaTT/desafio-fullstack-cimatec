@@ -6,7 +6,7 @@
       </div>
       <div class="modal-body">
 
-        <form class="form" [formGroup]="vehicleDataForm">
+        <form [formGroup]="vehicleDataForm">
           <div class="form-group">
             <label for="vin" class="form-label">Vin</label>
             <input placeholder="ex: 2frc25nhd636" class="form-control" id="vin" formControlName="vin">
@@ -15,7 +15,7 @@
               *ngIf="vehicleDataForm.get('vin')?.errors?.['required'] &&
               vehicleDataForm.get('vin')?.touched"
               mensagem="campo obrigatório">
-            </app-message>  
+            </app-message>
 
           <div class="form-group mt-3">
             <label for="odometer" class="form-label">Odômetro</label>
@@ -25,7 +25,7 @@
               *ngIf="vehicleDataForm.get('odometer')?.errors?.['required'] &&
               vehicleDataForm.get('odometer')?.touched"
               mensagem="campo obrigatório">
-            </app-message>  
+            </app-message>
 
           <div class="form-group mt-3">
             <label for="tirePressure" class="form-label">Pressão dos pneus</label>
@@ -34,8 +34,8 @@
             <app-message
               *ngIf="vehicleDataForm.get('tirePressure')?.errors?.['required'] &&
               vehicleDataForm.get('tirePressure')?.touched"
-              mensagem="campo obrigatório">     
-            </app-message>    
+              mensagem="campo obrigatório">
+            </app-message>
 
           <div class="form-group mt-3">
             <label for="fuelLevel" class="form-label">Nível de combustível</label>
@@ -45,7 +45,7 @@
               *ngIf="vehicleDataForm.get('fuelLevel')?.errors?.['required'] &&
               vehicleDataForm.get('fuelLevel')?.touched"
               mensagem="campo obrigatório">
-            </app-message>    
+            </app-message>
 
           <div class="form-group mt-3">
             <label for="status" class="form-label">Status</label>
@@ -56,7 +56,7 @@
               vehicleDataForm.get('status')?.touched"
               mensagem="campo obrigatório">
             </app-message>
-            
+
           <div class="form-group mt-3">
             <label for="batteryStatus" class="form-label">Status da bateria</label>
             <input placeholder="ex: ok/recharge" class="form-control" id="batteryStatus" formControlName="batteryStatus">
@@ -65,7 +65,7 @@
               *ngIf="vehicleDataForm.get('batteryStatus')?.errors?.['required'] &&
               vehicleDataForm.get('batteryStatus')?.touched"
               mensagem="campo obrigatório">
-            </app-message>  
+            </app-message>
 
           <div class="form-group mt-3">
             <label for="latitude" class="form-label">Latitude</label>
@@ -76,16 +76,16 @@
               vehicleDataForm.get('lat')?.touched"
               mensagem="campo obrigatório">
             </app-message>
-            
+
           <div class="form-group mt-3">
             <label for="longitude" class="form-label">Longitude</label>
-            <input placeholder="ex: -35,2314" class="form-control" id="longitude" formControlName="_long"> 
+            <input placeholder="ex: -35,2314" class="form-control" id="longitude" formControlName="_long">
           </div>
             <app-message
               *ngIf="vehicleDataForm.get('_long')?.errors?.['required'] &&
               vehicleDataForm.get('_long')?.touched"
               mensagem="campo obrigatório">
-            </app-message>  
+            </app-message>
         </form>
       </div>
       <div class="modal-footer">
@@ -95,4 +95,4 @@
     </div>
   </div>
 
-    
+

@@ -1,5 +1,6 @@
 class vehicleDataTable {
     init(dbConnection) {
+    
         this.dbConnection = dbConnection; 
 
         this.createTable();
@@ -78,3 +79,4 @@ class vehicleDataTable {
 }
 
 module.exports = new vehicleDataTable; 
+

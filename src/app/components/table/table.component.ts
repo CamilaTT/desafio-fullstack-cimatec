@@ -13,7 +13,6 @@ import Swal from 'sweetalert2';
 export class TableComponent implements OnInit {
 
   queryField = new FormControl;
-
   vehicleData!: VehicleData | any
 
   vehicleData$ = this.queryField.valueChanges.pipe(
@@ -26,7 +25,7 @@ export class TableComponent implements OnInit {
     .subscribe((value) => {
       if(value.length < 2) this.vehicleData = value 
     }
-    )
+  )
 
   constructor(private crudService: CrudService) { }
 

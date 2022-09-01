@@ -13,9 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class ModalComponent implements OnInit {
 
-  vehicleDataForm!: FormGroup; 
-
-  vehicleData!: VehicleData; 
+  vehicleDataForm!: FormGroup;
 
   constructor(
     private crudService: CrudService, private formBuilder: FormBuilder,
@@ -23,7 +21,6 @@ export class ModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.vehicleDataForm = this.formBuilder.group({
-      id: [],
       vin: ['', Validators.required],
       odometer: ['', Validators.required],
       tirePressure: ['', Validators.required],
@@ -33,17 +30,17 @@ export class ModalComponent implements OnInit {
       lat: ['', Validators.required],
       _long: ['', Validators.required]
     })
+
+    console.log(this.vehicleDataForm)
   }
 
-  addVehicleData() {  
-
-    event?.preventDefault()
+  addVehicleData() {
 
     if(this.vehicleDataForm.valid) {
       const newVehicleData = this.vehicleDataForm.getRawValue() as VehicleData;
       console.log(newVehicleData);
       this.crudService.addVehicleData(newVehicleData).subscribe((res) => {
-        console.log(res)
+      console.log(res)
         Swal.fire(
           {
             title: 'Dados cadastrados com sucesso!',

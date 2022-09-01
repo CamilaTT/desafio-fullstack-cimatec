@@ -37,9 +37,9 @@ class VehicledataModel {
         const insert = 'INSERT INTO VEHICLEDATA SET ?'
 
         dbConnection.query(insert, vehicledata, (error) => {
-            error ? res.status(400).json(error) 
+            error ? res.status(400).json(error)
                 : res.status(201).json({
-                    message: `Vin ${vehicledata.vin} succesfully added`
+                    message: `Vehicle data succesfully added`
                 })
         })
     }
@@ -64,3 +64,4 @@ class VehicledataModel {
 }
 
 module.exports = new VehicledataModel;
+
