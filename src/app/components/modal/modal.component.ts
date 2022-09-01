@@ -60,7 +60,7 @@ export class ModalComponent implements OnInit {
       )
     }
   }
-  
+
   updateVehicleData() {}
 }
 

@@ -1,6 +1,8 @@
 class vehicleTable {
     init(dbConnection) {
-        this.dbConnection = dbConnection;
+    
+        this.dbConnection = dbConnection; 
+
 
         this.createTable();
         this.insertDefaultVehicles();
@@ -10,7 +12,7 @@ class vehicleTable {
         const VEHICLE_TABLE = `
             CREATE TABLE IF NOT EXISTS VEHICLE (
                 id INT PRIMARY KEY AUTO_INCREMENT,
-                vehicle TEXT DEFAULT ('') NOT NULL,
+                vehicle TEXT DEFAULT ('') NOT NULL, 
                 totalSales INT,
                 connected INT,
                 softwareUpdates INT
@@ -32,8 +34,8 @@ class vehicleTable {
 
     insertVehicle(vehicle, totalSales, connected, softwareUpdates) {
 		const INSERT_VEHICLE = `
-            INSERT INTO VEHICLE (vehicle, totalSales, connected, softwareUpdates)
-                SELECT '${vehicle}', ${totalSales}, ${connected}, ${softwareUpdates}
+            INSERT INTO VEHICLE (vehicle, totalSales, connected, softwareUpdates) 
+                SELECT '${vehicle}', ${totalSales}, ${connected}, ${softwareUpdates} 
                 WHERE NOT EXISTS (SELECT * FROM VEHICLE WHERE vehicle = '${vehicle}'
             )`
 
@@ -44,3 +46,4 @@ class vehicleTable {
 }
 
 module.exports = new vehicleTable;
+
