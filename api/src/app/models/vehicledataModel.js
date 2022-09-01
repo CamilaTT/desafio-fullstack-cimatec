@@ -9,7 +9,7 @@ class VehicledataModel {
             lat, _long FROM VEHICLEDATA WHERE vin LIKE '%${valor}%'`
 
         dbConnection.query(selectByVin, (error, results) => {
-        
+
             if(error) {
                 console.log(error)
                 res.status(400).json(error)
@@ -37,9 +37,9 @@ class VehicledataModel {
         const insert = 'INSERT INTO VEHICLEDATA SET ?'
 
         dbConnection.query(insert, vehicledata, (error) => {
-            error ? res.status(400).json(error) 
+            error ? res.status(400).json(error)
                 : res.status(201).json({
-                    message: `Vin ${vehicledata.vin} succesfully added`
+                    message: `Vehicle data succesfully added`
                 })
         })
     }
@@ -48,7 +48,7 @@ class VehicledataModel {
         const update = `UPDATE VEHICLEDATA SET ? WHERE id=?`
 
         dbConnection.query(update, [values, id], (error) => {
-            error ? res.status(400).json(error) 
+            error ? res.status(400).json(error)
                 : res.status(200).json(`vehicle data id ${id} succesfully updated`)
         })
     }
@@ -57,7 +57,7 @@ class VehicledataModel {
         const del = `DELETE FROM VEHICLEDATA WHERE id=${id}`
 
         dbConnection.query(del, (error) => {
-            error ? res.status(400).json(error) 
+            error ? res.status(400).json(error)
                 : res.status(200).json(`vehicle data id ${id} succesfully delected`)
         })
     }

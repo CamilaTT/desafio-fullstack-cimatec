@@ -19,7 +19,6 @@ export class AcessarComponent {
   login() {
     this.authService.auth(this.usuario, this.senha).subscribe(() => {
       this.router.navigate(['home']);
-      console.log(this.usuario, this.senha)
     }, (error) => {
           Swal.fire(
             {

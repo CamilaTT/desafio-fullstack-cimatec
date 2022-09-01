@@ -13,9 +13,9 @@ import { ModalComponent } from './modal.component';
   ],
   imports: [
     CommonModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
-    MessageModule 
+    MessageModule
   ],
   exports: [
     ModalComponent

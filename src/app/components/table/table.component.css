@@ -17,7 +17,7 @@ table {
 
 .btn {
   color: #00274E;
-  border-color: #ffffff;
+  border: none;
 }
 
 .btn:hover {
