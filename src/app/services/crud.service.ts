@@ -2,7 +2,7 @@ import { API_URL } from 'src/environments/environment.prod';
 import { VehicleData, VehiclesDataAPI } from '../models/veiculos/vehicles-data';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { pluck } from 'rxjs/operators'
+import { map } from 'rxjs/operators'
 
 
 @Injectable({
@@ -12,10 +12,11 @@ export class CrudService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getVehicleData(valor?: string) {
-    const params = valor ? new HttpParams().append('valor', valor) : undefined;
-    return this.httpClient.get<VehiclesDataAPI>(`${API_URL}vehicleData`, {params})
-    .pipe(pluck('vehicleData'))
+  getVehicleData(value?: string) {
+    const params = value ? new HttpParams().append('value', value) : undefined;
+    return this.httpClient.get<VehiclesDataAPI>(`${API_URL}vehicledata`, {params})
+    .pipe(map(res => res.vehicleData)
+    )
   }
 
   addVehicleData(vehicleData: VehicleData) {
