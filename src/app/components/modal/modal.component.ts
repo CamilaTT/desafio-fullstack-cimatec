@@ -26,9 +26,7 @@ export class ModalComponent implements OnInit {
   }
 
 
-  constructor(
-    private crudService: CrudService, private formBuilder: FormBuilder,
-  ) { }
+  constructor(private crudService: CrudService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.vehicleDataForm = this.formBuilder.group({
@@ -41,10 +39,7 @@ export class ModalComponent implements OnInit {
       batteryStatus: [this.vehicleData.batteryStatus, Validators.required],
       lat: [this.vehicleData.lat, Validators.required],
       _long: [this.vehicleData._long, Validators.required]
-
     })
-
-    console.log(this.vehicleDataForm)
   }
 
   addVehicleData() {

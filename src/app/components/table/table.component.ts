@@ -11,7 +11,7 @@ import { ModalComponent } from '../modal/modal.component';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-export class TableComponent implements OnInit {
+export class TableComponent {
 
   queryField = new FormControl;
 
@@ -34,7 +34,6 @@ export class TableComponent implements OnInit {
 
   constructor(private crudService: CrudService) { }
 
-  ngOnInit(): void {}
 
   confirmDelete() {
     Swal.fire(
