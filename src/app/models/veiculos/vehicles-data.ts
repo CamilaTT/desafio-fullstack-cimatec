@@ -1,7 +1,7 @@
 export interface VehiclesData extends Array<VehicleData>{}
 
 export interface VehicleData {
-  id?: number 
+  id?: number
   vin: string
   odometer: string
   tirePressure: string

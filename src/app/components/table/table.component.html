@@ -18,13 +18,13 @@
         >
 
         <button type="button" class="btn" aria-hidden="true" title="adicionar"
-          data-bs-toggle="modal" data-bs-target="#addModal">
+          data-bs-toggle="modal" data-bs-target="#vehicleDataModal">
             <i class="fa fa-plus"></i>
         </button>
 
         <button type="button" class="btn" aria-hidden="true" title="atualizar"
-        data-bs-toggle="modal" data-bs-target="#updateModal"
-        [disabled]="!vehicleData"> 
+        data-bs-toggle="modal" data-bs-target="#vehicleDataModal"
+        [disabled]="!vehicleData" (click)="transferReturnedVehicleData()">
           <i class="fa fa-pencil"></i>
         </button>
 
@@ -48,7 +48,7 @@
       <td *ngIf="vehicleData">
         {{ vehicleData[0]._long }}
       </td>
-    </tr> 
+    </tr>
   </tbody>
   <tfoot>
     <tr>
@@ -56,3 +56,4 @@
     </tr>
   </tfoot>
 </table>
+<app-modal></app-modal>

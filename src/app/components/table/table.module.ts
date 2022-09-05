@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TableComponent } from './table.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { ModalModule } from '../modal/modal.module';
 
 
 
@@ -14,6 +15,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     CommonModule,
     ReactiveFormsModule,
     SweetAlert2Module,
+    ModalModule 
   ],
   exports: [
     TableComponent
