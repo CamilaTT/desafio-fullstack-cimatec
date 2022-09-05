@@ -1,3 +1,5 @@
+<div class="modal fade" id="vehicleDataModal" data-bs-backdrop="static" data-bs-keyboard="false"
+tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -90,9 +92,14 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <ng-content select="button"></ng-content>
+        <button type="submit" class="btn btn-warning" (click)="updateVehicleData()" [disabled]="vehicleDataForm.invalid">
+          Atualizar
+        </button>
+        <button type="submit" class="btn btn-primary" (click)="addVehicleData()" [disabled]="vehicleDataForm.invalid">
+          Adicionar
+        </button>
       </div>
     </div>
   </div>
-
+</div>
 

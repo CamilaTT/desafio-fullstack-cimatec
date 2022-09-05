@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { map, filter, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 import { CrudService } from 'src/app/services/crud.service';
 import { VehicleData } from 'src/app/models/veiculos/vehicles-data';
 import Swal from 'sweetalert2';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-table',
@@ -13,7 +14,9 @@ import Swal from 'sweetalert2';
 export class TableComponent implements OnInit {
 
   queryField = new FormControl;
-  vehicleData!: VehicleData | any
+  vehicleData!: VehicleData | any;
+
+  @ViewChild(ModalComponent) modalComponent!:ModalComponent;
 
   vehicleData$ = this.queryField.valueChanges.pipe(
     map(value => value.trim()),
@@ -23,7 +26,7 @@ export class TableComponent implements OnInit {
     switchMap((value) => this.crudService.getVehicleData(value))
     )
     .subscribe((value) => {
-      if(value.length < 2) this.vehicleData = value 
+      if(value.length < 2) this.vehicleData = value
     }
   )
 
@@ -63,5 +66,11 @@ export class TableComponent implements OnInit {
             )
           }
       })
+  }
+
+  transferReturnedVehicleData() {
+    console.log(this.vehicleData[0])
+    this.modalComponent.vehicleDataForm = this.vehicleData[0];
+    console.log(this.modalComponent.vehicleDataForm)
   }
 }

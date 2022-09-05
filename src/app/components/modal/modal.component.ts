@@ -1,4 +1,3 @@
-
 import { VehicleData } from './../../models/veiculos/vehicles-data';
 import { CrudService } from '../../services/crud.service';
 import { Component, OnInit } from '@angular/core';
@@ -30,17 +29,16 @@ export class ModalComponent implements OnInit {
       lat: ['', Validators.required],
       _long: ['', Validators.required]
     })
-
-    console.log(this.vehicleDataForm)
   }
+
 
   addVehicleData() {
 
-    if(this.vehicleDataForm.valid) {
+   if(this.vehicleDataForm.valid) {
       const newVehicleData = this.vehicleDataForm.getRawValue() as VehicleData;
-      console.log(newVehicleData);
       this.crudService.addVehicleData(newVehicleData).subscribe((res) => {
-      console.log(res)
+        console.log(res);
+        this.vehicleDataForm.reset()
         Swal.fire(
           {
             title: 'Dados cadastrados com sucesso!',
@@ -52,7 +50,7 @@ export class ModalComponent implements OnInit {
         (error) => {
             Swal.fire(
               {
-                text: 'Não foi possível realizar o cadastro. Tente novamente mais tarde!',
+                text: 'Não foi possível realizar o cadastro.',
                 confirmButtonColor: '#00274E'
               }
             )
@@ -61,6 +59,28 @@ export class ModalComponent implements OnInit {
     }
   }
 
-  updateVehicleData() {}
+
+  updateVehicleData() {
+    const vehicleData = this.vehicleDataForm.getRawValue() as VehicleData;
+    this.crudService.updateVehicleData(vehicleData).subscribe(res => {
+      console.log(res)
+      Swal.fire(
+        {
+          title: 'Dados atualizados com sucesso!',
+          icon: 'success',
+          confirmButtonColor: '#00274E'
+        }
+      )
+    },
+      (error) => {
+          Swal.fire(
+            {
+              text: 'Não foi possível atualizar os dados.',
+              confirmButtonColor: '#00274E'
+            }
+          )
+      }
+    )
+  }
 }
 
