@@ -16,7 +16,7 @@ export class TableComponent implements OnInit {
   queryField = new FormControl;
   vehicleData!: VehicleData | any;
 
-  @ViewChild(ModalComponent) modalComponent!:ModalComponent;
+  @ViewChild(ModalComponent) modalComponent!: ModalComponent;
 
   vehicleData$ = this.queryField.valueChanges.pipe(
     map(value => value.trim()),
@@ -69,8 +69,7 @@ export class TableComponent implements OnInit {
   }
 
   transferReturnedVehicleData() {
-    console.log(this.vehicleData[0])
-    this.modalComponent.vehicleDataForm = this.vehicleData[0];
-    console.log(this.modalComponent.vehicleDataForm)
+    this.modalComponent.vehicleData = this.vehicleData[0]
+    this.modalComponent.ngOnInit()
   }
 }
