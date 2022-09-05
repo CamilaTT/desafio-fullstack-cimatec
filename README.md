@@ -60,7 +60,7 @@ DB_USER = nome de usuário do banco
 DB_PASSWORD = senha de acesso ao banco
 DB_NAME = nome do banco de dados 
   
-SECRET = string complexa que servirá para assinatura do token de autentificação de usuário
+SECRET = string complexa que servirá para assinatura do token de autenticação de usuário
 ```
 * Execute a aplicação: `npm start` 
 ```bash
@@ -105,6 +105,6 @@ Execute `ng e2e` para realizar os testes "end-to-end" através de uma plataforma
 <img src="https://img.shields.io/static/v1?label=jwt&message=8.5.1&color=000000&style=for-the-badge">
 <img src="https://img.shields.io/static/v1?label=Node.Js&message=16.15.1&color=339933&style=for-the-badge">
 <img src="https://img.shields.io/static/v1?label=Express&message=16.15.1&color=D3D3D3&style=for-the-badge">
-<img src="https://img.shields.io/static/v1?label=Mysql&message=8.0.0&color=4479A1&style=for-the-badge">
+<img src="https://img.shields.io/static/v1?label=Mysql&message=8.0.30&color=4479A1&style=for-the-badge">
 <img src="https://img.shields.io/static/v1?label=Postman&message=9.29.0&color=FF6C37&style=for-the-badge">
 </div>
