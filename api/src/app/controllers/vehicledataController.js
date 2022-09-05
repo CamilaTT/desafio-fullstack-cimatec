@@ -3,14 +3,14 @@ const addRequestHeader = require('../middleware/RequestHeader');
 
 module.exports = app => {
 
-    app.use(addRequestHeader); 
-    
+    app.use(addRequestHeader);
+
     app.get('/vehicledata', (req, res) => {
-        let valor = ''
-        if(req.query.valor) {
-            valor = req.query.valor
+        let value = ''
+        if(req.query.value) {
+            value = req.query.value
         }
-        vehicledataModel.listVehicleData(valor, res)
+        vehicledataModel.listVehicleData(value, res)
     })
 
     app.get('/vehicledata/:id', (req, res) => {
@@ -25,12 +25,12 @@ module.exports = app => {
 
     app.put('/vehicledata/:id', (req, res) => {
         const id = parseInt(req.params.id)
-        const values = req.body 
+        const values = req.body
         vehicledataModel.updateVehicleData(id, values, res)
     })
 
     app.delete('/vehicledata/:id', (req, res) => {
         const id = parseInt(req.params.id)
         vehicledataModel.deleteVehicleData(id, res)
-    }) 
+    })
 }

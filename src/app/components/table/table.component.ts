@@ -1,19 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { map, filter, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 import { CrudService } from 'src/app/services/crud.service';
 import { VehicleData } from 'src/app/models/veiculos/vehicles-data';
 import Swal from 'sweetalert2';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-export class TableComponent implements OnInit {
+export class TableComponent {
 
   queryField = new FormControl;
-  vehicleData!: VehicleData | any
+
+  vehicleData!: VehicleData | any;
+
+  @ViewChild(ModalComponent) modalComponent!: ModalComponent;
+
 
   vehicleData$ = this.queryField.valueChanges.pipe(
     map(value => value.trim()),
@@ -23,13 +28,12 @@ export class TableComponent implements OnInit {
     switchMap((value) => this.crudService.getVehicleData(value))
     )
     .subscribe((value) => {
-      if(value.length < 2) this.vehicleData = value 
+      if(value.length < 2) this.vehicleData = value
     }
   )
 
   constructor(private crudService: CrudService) { }
 
-  ngOnInit(): void {}
 
   confirmDelete() {
     Swal.fire(
@@ -63,5 +67,10 @@ export class TableComponent implements OnInit {
             )
           }
       })
+  }
+
+  transferReturnedVehicleData() {
+    this.modalComponent.vehicleData = this.vehicleData[0]
+    this.modalComponent.ngOnInit()
   }
 }
