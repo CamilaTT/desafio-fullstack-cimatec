@@ -6,15 +6,15 @@ import { LoginComponent } from './login.component';
 import { AuthModule } from '../../auth/auth.module';
 import { MessageModule } from '../../components/message/message.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AcessarComponent } from './acessar/acessar.component';
-import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { AccessComponent } from './access/access.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    AcessarComponent,
-    CadastrarComponent
+    AccessComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,

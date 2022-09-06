@@ -3,17 +3,17 @@
     <form class="form mt-4" (ngSubmit)="login()" #loginForm="ngForm">
       <div class="form-group">
         <input class="form-control" placeholder="Nome de usuário"
-        [(ngModel)]="usuario" name="usuario" #campoUsuario="ngModel" required/>
+        [(ngModel)]="user" name="user" #userField="ngModel" required/>
         <app-message
-        *ngIf="campoUsuario.invalid && campoUsuario.touched"
+        *ngIf="userField.invalid && userField.touched"
         mensagem="Usuário obrigatório"></app-message>
       </div>
       <br>
       <div class="form-group">
         <input type="password" class="form-control" placeholder="Senha"
-        [(ngModel)]="senha" name="senha" #campoSenha="ngModel" required/>
+        [(ngModel)]="password" name="password" #passwordField="ngModel" required/>
         <app-message
-          *ngIf="campoSenha.invalid && campoSenha.touched"
+          *ngIf="passwordField.invalid && passwordField.touched"
           mensagem="Senha obrigatória"></app-message>
       </div>
       <br>

@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { map, filter, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 import { CrudService } from 'src/app/services/crud.service';
-import { VehicleData } from 'src/app/models/veiculos/vehicles-data';
+import { VehicleData } from 'src/app/models/vehicles/vehicles-data';
 import Swal from 'sweetalert2';
 import { ModalComponent } from '../modal/modal.component';
 

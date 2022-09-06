@@ -1,23 +1,24 @@
+import { TokenService } from '../services/token.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { CadastroUsuarioService } from './cadastro-usuario.service';
+import { UserService } from '../services/user.service';
 
-describe('CadastroUsuarioService', () => {
-  let service: CadastroUsuarioService;
+describe('UserService', () => {
+  let service: UserService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
         HttpClientTestingModule,
         RouterTestingModule.withRoutes([]),
-        FormsModule,
-        ReactiveFormsModule
       ],
+      providers: [
+        TokenService
+      ]
     });
-    service = TestBed.inject(CadastroUsuarioService);
+    service = TestBed.inject(UserService);
   });
 
   it('should be created', () => {

@@ -1,28 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NovoUsuario } from 'src/app/models/usuario/novo-usuario';
-import { CadastroUsuarioService } from './cadastro-usuario.service';
+import { NewUser } from 'src/app/models/user/new-user';
+import { UserRegisterService } from './user-register.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-cadastrar',
-  templateUrl: './cadastrar.component.html',
-  styleUrls: ['./cadastrar.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class CadastrarComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
-  novoUsuarioForm!: FormGroup;
+  newUserForm!: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
-    private cadastroUsuarioService: CadastroUsuarioService,
+    private userRegisterService: UserRegisterService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
 
-    this.novoUsuarioForm = this.formBuilder.group({
+    this.newUserForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       fullName: ['', Validators.required],
       userName: ['', Validators.required],
@@ -34,10 +34,10 @@ export class CadastrarComponent implements OnInit {
   register() {
     event?.preventDefault()
 
-    if(this.novoUsuarioForm.valid) {
-      const novoUsuario = this.novoUsuarioForm.getRawValue() as NovoUsuario;
-      console.log(novoUsuario);
-      this.cadastroUsuarioService.userRegister(novoUsuario).subscribe(() => {
+    if(this.newUserForm.valid) {
+      const newUser = this.newUserForm.getRawValue() as NewUser;
+      console.log(newUser);
+      this.userRegisterService.userRegister(newUser).subscribe(() => {
         this.router.navigate(['']);
       },
         (error) => {

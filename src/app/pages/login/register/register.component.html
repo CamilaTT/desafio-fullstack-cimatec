@@ -1,33 +1,33 @@
 <br>
 <h4 class="text-center">Cadastre-se</h4>
-<form class="form mt-4" [formGroup]="novoUsuarioForm" (submit)="register()">
+<form class="form mt-4" [formGroup]="newUserForm" (submit)="register()">
   <div class="form-group mt-3">
     <input placeholder="E-mail" class="form-control" formControlName="email">
   </div>
   <app-message
-    *ngIf="novoUsuarioForm.get('email')?.errors?.['required'] &&
-    novoUsuarioForm.get('email')?.touched"
+    *ngIf="newUserForm.get('email')?.errors?.['required'] &&
+    newUserForm.get('email')?.touched"
     mensagem="E-mail obrigatório">
   </app-message>
   <app-message
-    *ngIf="novoUsuarioForm.get('email')?.errors?.['email'] &&
-    novoUsuarioForm.get('email')?.touched"
+    *ngIf="newUserForm.get('email')?.errors?.['email'] &&
+    newUserForm.get('email')?.touched"
     mensagem="Formato de e-mail inválido">
   </app-message>
   <div class="form-group mt-3">
     <input placeholder="Nome completo" class="form-control" formControlName="fullName">
   </div>
   <app-message
-    *ngIf="novoUsuarioForm.get('fullName')?.errors?.['required'] &&
-    novoUsuarioForm.get('fullName')?.touched"
+    *ngIf="newUserForm.get('fullName')?.errors?.['required'] &&
+    newUserForm.get('fullName')?.touched"
     mensagem="Nome completo obrigatório">
   </app-message>
   <div class="form-group mt-3">
     <input placeholder="Usuário" class="form-control" formControlName="userName">
   </div>
   <app-message
-    *ngIf="novoUsuarioForm.get('userName')?.errors?.['required'] &&
-    novoUsuarioForm.get('userName')?.touched"
+    *ngIf="newUserForm.get('userName')?.errors?.['required'] &&
+    newUserForm.get('userName')?.touched"
     mensagem="Nome de usuário obrigatório">
   </app-message>
 
@@ -35,8 +35,8 @@
     <input type="password" placeholder="Senha" class="form-control" formControlName="password">
   </div>
   <app-message
-    *ngIf="novoUsuarioForm.get('password')?.errors?.['required'] &&
-    novoUsuarioForm.get('password')?.touched"
+    *ngIf="newUserForm.get('password')?.errors?.['required'] &&
+    newUserForm.get('password')?.touched"
     mensagem="Senha obrigatória">
   </app-message>
   <div class="form-group mt-3">
@@ -54,7 +54,7 @@
       </div>
   </div>
   <div class="d-grid gap-2">
-    <button type="submit" class="btn btn-primary btn-block" [disabled]="novoUsuarioForm.invalid">
+    <button type="submit" class="btn btn-primary btn-block" [disabled]="newUserForm.invalid">
       Cadastrar
     </button>
   </div>

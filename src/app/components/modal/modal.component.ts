@@ -1,4 +1,4 @@
-import { VehicleData } from './../../models/veiculos/vehicles-data';
+import { VehicleData } from '../../models/vehicles/vehicles-data';
 import { CrudService } from '../../services/crud.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';

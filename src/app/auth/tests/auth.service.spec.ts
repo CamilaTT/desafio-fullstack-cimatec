@@ -1,4 +1,4 @@
-import { UsuarioService } from './../services/usuario.service';
+import { UserService } from '../services/user.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TestBed } from '@angular/core/testing';
 
@@ -15,7 +15,7 @@ describe('AuthService', () => {
         RouterTestingModule.withRoutes([]),
       ],
       providers: [
-        UsuarioService
+        UserService
       ]
     });
     service = TestBed.inject(AuthService);

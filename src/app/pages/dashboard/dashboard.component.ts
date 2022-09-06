@@ -1,7 +1,7 @@
 import { ModalComponent } from './../../components/modal/modal.component';
 import { ChartService } from 'src/app/services/chart.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Veiculo, Veiculos } from '../../models/veiculos/vehicles';
+import { Veiculo, Veiculos } from '../../models/vehicles/vehicles';
 import { VehicleService } from '../../services/vehicle.service';
 
 @Component({

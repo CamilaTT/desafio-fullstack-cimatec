@@ -5,19 +5,19 @@ import Swal from 'sweetalert2';
 
 
 @Component({
-  selector: 'app-acessar',
-  templateUrl: './acessar.component.html',
-  styleUrls: ['./acessar.component.css']
+  selector: 'app-access',
+  templateUrl: './access.component.html',
+  styleUrls: ['./access.component.css']
 })
-export class AcessarComponent {
+export class AccessComponent {
 
-  usuario = '';
-  senha = '';
+  user = '';
+  password = '';
 
   constructor(private authService: AuthService, private router: Router) { }
 
   login() {
-    this.authService.auth(this.usuario, this.senha).subscribe(() => {
+    this.authService.auth(this.user, this.password).subscribe(() => {
       this.router.navigate(['home']);
     }, (error) => {
           Swal.fire(
