@@ -47,7 +47,6 @@ export class ModalComponent implements OnInit {
    if(this.vehicleDataForm.valid) {
       const newVehicleData = this.vehicleDataForm.getRawValue() as VehicleData;
       this.crudService.addVehicleData(newVehicleData).subscribe((res) => {
-        console.log(res);
         this.vehicleDataForm.reset()
         Swal.fire(
           {
@@ -69,13 +68,11 @@ export class ModalComponent implements OnInit {
     }
   }
 
-
   updateVehicleData() {
 
     const vehicleData = this.vehicleDataForm.getRawValue() as VehicleData;
     console.log(vehicleData)
     this.crudService.updateVehicleData(vehicleData).subscribe(res => {
-      console.log(res)
       Swal.fire(
         {
           title: 'Dados atualizados com sucesso!',
