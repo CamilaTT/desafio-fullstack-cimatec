@@ -41,20 +41,19 @@ delete | http://localhost:3000/vehicledata/:id | deletar dados do veículo pelo 
 Para executar essa aplicação em ambiente de desenvolvimento, você precisa ter instalado na sua máquina as seguintes ferramentas:
 * [GIT](https://git-scm.com/)
 * [Node.js](https://nodejs.org/en/)
-* [MySQL Workbench (para criação do banco de dados)](https://www.mysql.com/products/workbench/)
-* [Postman (para teste dos métodos da api - opcional)](https://www.postman.com/downloads/)
+* [MySQL Workbench - para criação do banco de dados](https://www.mysql.com/products/workbench/)
+* [Postman - para teste dos métodos da api (opcional)](https://www.postman.com/downloads/)
 
 ### Preparando o ambiente
  #### Para o backend 
 * Crie um banco de dados no MySQL com um nome de sua escolha
 * Clone este repositório através do git bash: `git clone <https://github.com/CamilaTT/desafio-fullstack-cimatec>`
-* Acesse a pasta do projeto em um terminal/cmd: `cd desafio-fullstack-cimatec`
-* Siga para a pasta api: `cd api`
+* Acesse a pasta do projeto em um terminal/cmd: `cd desafio-fullstack-cimatec/api`
 * Instale as dependências: `npm install`
 * Crie um arquivo .env na raiz da aplicação e insira as seguintes variáveis de ambiente do node:
 
 ```
-DB_HOST = caminho do banco de dados (ex: localhost)
+DB_HOST = host do banco de dados (ex: localhost)
 DB_PORT = porta de acesso ao banco de dados
 DB_USER = nome de usuário do banco
 DB_PASSWORD = senha de acesso ao banco
@@ -70,7 +69,7 @@ SECRET = string complexa que servirá para assinatura do token de autentificaç�
 
 ```bash
 # Com este repositório já clonado, acesse a pasta do projeto em outro terminal/cmd
-$ cd desafio-fullstack-cimatec
+$ cd desafio-fullstack-cimatec/frontend
 
 # Instale as dependências
 $ npm install
@@ -97,7 +96,7 @@ Execute `ng e2e` para realizar os testes "end-to-end" através de uma plataforma
 <br>
 <h2>Tecnologias</h2>
 <div align="center">
-<img src="https://img.shields.io/static/v1?label=Angular&message=14.0.2&color=DD0031&style=for-the-badge">
+<img src="https://img.shields.io/static/v1?label=Angular&message=14.0.4&color=DD0031&style=for-the-badge">
 <img src="https://img.shields.io/static/v1?label=RxJS&message=7.5.0&color=B7178C&style=for-the-badge">
 <img src="https://img.shields.io/static/v1?label=Bootstrap&message=5.2.0&color=7952B3&style=for-the-badge">
 <img src="https://img.shields.io/static/v1?label=Chartjs&message=3.9.1&color=FF6384&style=for-the-badge">
