@@ -23,6 +23,7 @@ export class AccessComponent {
           Swal.fire(
             {
               text: 'Nome de usuário e/ou senha não confere(m). Por favor, verifique e tente novamente.',
+              icon: 'error',
               confirmButtonColor: '#00274E'
             }
           )
