@@ -19,8 +19,7 @@ class UserModel {
             return res.status(404).json({ message: 'User not found' })
         }
 
-        const checkPassword = await bcrypt.compare((user.password).toString(), checkUser.password) //Tá parando aqui (Error: data and hash must be strings)
-        console.log(typeof user.password, typeof checkUser.password)
+        const checkPassword = await bcrypt.compare((user.password).toString(), checkUser.password) 
 
         if(!checkPassword) {
             return res.status(422).json({ message: 'Invalid password'})
