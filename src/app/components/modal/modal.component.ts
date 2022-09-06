@@ -1,4 +1,4 @@
-import { VehicleData } from '../../models/vehicles/vehicles-data';
+import { VehicleData } from './../../models/veiculos/vehicles-data';
 import { CrudService } from '../../services/crud.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -25,6 +25,7 @@ export class ModalComponent implements OnInit {
     _long: ''
   }
 
+
   constructor(private crudService: CrudService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -46,6 +47,7 @@ export class ModalComponent implements OnInit {
    if(this.vehicleDataForm.valid) {
       const newVehicleData = this.vehicleDataForm.getRawValue() as VehicleData;
       this.crudService.addVehicleData(newVehicleData).subscribe((res) => {
+        console.log(res);
         this.vehicleDataForm.reset()
         Swal.fire(
           {
@@ -67,11 +69,13 @@ export class ModalComponent implements OnInit {
     }
   }
 
+
   updateVehicleData() {
 
     const vehicleData = this.vehicleDataForm.getRawValue() as VehicleData;
     console.log(vehicleData)
     this.crudService.updateVehicleData(vehicleData).subscribe(res => {
+      console.log(res)
       Swal.fire(
         {
           title: 'Dados atualizados com sucesso!',
