@@ -1,5 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl: 'https://api-desafio-fullstack.herokuapp.com/'
 };
 
-export const API_URL = 'http://localhost:3000/';

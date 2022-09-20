@@ -1,6 +1,5 @@
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:3000/'
 };
-
-export const API_URL = 'http://localhost:3000/';
 

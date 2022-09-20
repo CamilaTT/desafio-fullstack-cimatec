@@ -1,9 +1,10 @@
-import { API_URL } from 'src/environments/environment.prod';
 import { VehicleData, VehiclesDataAPI } from '../models/vehicles/vehicles-data';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators'
+import { environment } from 'src/environments/environment';
 
+const API_URL = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'
