@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NewUser } from 'src/app/models/user/new-user';
-import { API_URL } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
+
+const API_URL = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'

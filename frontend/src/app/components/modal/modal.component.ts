@@ -59,6 +59,7 @@ export class ModalComponent implements OnInit {
             Swal.fire(
               {
                 text: 'Não foi possível realizar o cadastro.',
+                icon: 'error',
                 confirmButtonColor: '#00274E'
               }
             )
@@ -69,9 +70,10 @@ export class ModalComponent implements OnInit {
 
   updateVehicleData() {
 
-    const vehicleData = this.vehicleDataForm.getRawValue() as VehicleData;
-    console.log(vehicleData)
-    this.crudService.updateVehicleData(vehicleData).subscribe(res => {
+    const vehicleDataUpdated = this.vehicleDataForm.getRawValue() as VehicleData;
+    console.log(vehicleDataUpdated)
+    this.crudService.updateVehicleData(vehicleDataUpdated).subscribe(res => {
+      this.vehicleDataForm.reset()
       Swal.fire(
         {
           title: 'Dados atualizados com sucesso!',
@@ -84,6 +86,7 @@ export class ModalComponent implements OnInit {
           Swal.fire(
             {
               text: 'Não foi possível atualizar os dados.',
+              icon: 'error',
               confirmButtonColor: '#00274E'
             }
           )

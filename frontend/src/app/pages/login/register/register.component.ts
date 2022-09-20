@@ -44,6 +44,7 @@ export class RegisterComponent implements OnInit {
             Swal.fire(
               {
                 text: 'Não foi possível realizar o cadastro. Tente usar outro nome de usuário!',
+                icon: 'error',
                 confirmButtonColor: '#00274E'
               }
             )
